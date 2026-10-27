@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairosからのご提案 | 家事代行サービス様 公式サイト制作プラン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F9F7;
+    --surface: #FFFFFF;
+    --ink: #1E2F2B;
+    --ink-soft: #4A5D58;
+    --primary: #2C6E68;
+    --primary-dark: #163E3B;
+    --accent: #E3A857;
+    --accent2: #5A95A8;
+    --line: #DCE6E1;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.85;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1.5;
+  }
+  .num{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 26px 0;
+  }
+  .nav .wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav .logo{
+    font-family: 'Shippori Mincho', serif;
+    color: #F6F9F7;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+  }
+  .nav .logo span{
+    color: var(--accent);
+  }
+  .nav .tag{
+    color: rgba(246,249,247,0.75);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    min-height: 100vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 18% 25%, rgba(227,168,87,0.22), transparent 42%),
+      radial-gradient(circle at 82% 75%, rgba(90,149,168,0.28), transparent 48%),
+      linear-gradient(165deg, #0F3330 0%, #1C4F4B 45%, #2C6E68 100%);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width: 620px; height: 620px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    top: -180px; right: -160px;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+    bottom: -200px; left: -120px;
+  }
+  .hero-tiles{
+    position:absolute;
+    right: 6%;
+    bottom: 10%;
+    display:grid;
+    grid-template-columns: repeat(4, 22px);
+    grid-auto-rows: 22px;
+    gap: 7px;
+    opacity: 0.55;
+  }
+  .hero-tiles span{
+    display:block;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.14);
+  }
+  .hero-tiles span:nth-child(3n){ background: rgba(227,168,87,0.5); }
+  .hero-tiles span:nth-child(5n){ background: rgba(90,149,168,0.55); }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    color: #F6F9F7;
+    padding: 140px 0 100px;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before{
+    content:"";
+    width: 36px; height:1px;
+    background: var(--accent);
+  }
+  .hero h1{
+    color: #FDFBF6;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    letter-spacing: 0.03em;
+    margin-bottom: 26px;
+    max-width: 780px;
+  }
+  .hero h1 em{
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero p.lead{
+    font-size: 1rem;
+    color: rgba(246,249,247,0.82);
+    max-width: 560px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-meta{
+    display:flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    padding-top: 24px;
+    max-width: 640px;
+  }
+  .hero-meta div{ font-size: 0.78rem; color: rgba(246,249,247,0.7); }
+  .hero-meta strong{
+    display:block;
+    font-family:'Shippori Mincho', serif;
+    font-size: 1.05rem;
+    color: #FDFBF6;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* ---------- SECTION COMMON ---------- */
+  .section{ padding: 100px 0; }
+  .section-label{
+    font-size: 0.76rem;
+    letter-spacing: 0.22em;
+    color: var(--accent2);
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .section-label::before{
+    content:"";
+    width: 28px; height: 1px;
+    background: var(--accent2);
+  }
+  .section-title{
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    margin-bottom: 20px;
+  }
+  .section-sub{
+    color: var(--ink-soft);
+    max-width: 640px;
+    font-size: 0.95rem;
+  }
+
+  /* ---------- UNDERSTANDING ---------- */
+  .understanding{
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .understanding-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    margin-top: 48px;
+    align-items: start;
+  }
+  .understanding-grid p{
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    font-size: 0.96rem;
+  }
+  .understanding-grid strong{
+    color: var(--primary-dark);
+    font-weight: 500;
+  }
+  .quote-card{
+    background: var(--bg);
+    border-left: 3px solid var(--accent);
+    padding: 32px 30px;
+    border-radius: 2px;
+  }
+  .quote-card p{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+  .quote-card span{
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+  }
+
+  /* ---------- VALUES ---------- */
+  .values-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 50px;
+  }
+  .value-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 34px 28px;
+    border-radius: 6px;
+    position:relative;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .value-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(44,110,104,0.12);
+  }
+  .value-card .num{
+    font-size: 2.1rem;
+    color: var(--accent2);
+    opacity: 0.55;
+    display:block;
+    margin-bottom: 14px;
+  }
+  .value-card h3{
+    font-size: 1.08rem;
+    margin-bottom: 12px;
+    color: var(--primary-dark);
+  }
+  .value-card p{
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- COST ---------- */
+  .cost{
+    background: linear-gradient(180deg, #16433F 0%, #1C4F4B 100%);
+    color: #F2F7F5;
+  }
+  .cost .section-label{ color: var(--accent); }
+  .cost .section-label::before{ background: var(--accent); }
+  .cost .section-title{ color: #FDFBF6; }
+  .cost .section-sub{ color: rgba(242,247,245,0.75); }
+  .cost-table{
+    margin-top: 44px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cost-table th, .cost-table td{
+    padding: 18px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .cost-table th{
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    font-size: 0.82rem;
+  }
+  .cost-table td:last-child, .cost-table th:last-child{
+    color: #FDFBF6;
+    font-weight: 500;
+    text-align: right;
+  }
+  .cost-note{
+    margin-top: 22px;
+    font-size: 0.82rem;
+    color: rgba(242,247,245,0.6);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-list{
+    margin-top: 52px;
+    position: relative;
+  }
+  .process-list::before{
+    content:"";
+    position:absolute;
+    left: 23px; top: 10px; bottom: 10px;
+    width: 1px;
+    background: var(--line);
+  }
+  .process-step{
+    display:grid;
+    grid-template-columns: 48px 1fr;
+    gap: 26px;
+    margin-bottom: 42px;
+    position: relative;
+  }
+  .process-step .dot{
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--primary);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: var(--primary);
+    z-index: 1;
+  }
+  .process-step h3{
+    font-size: 1.02rem;
+    margin-bottom: 8px;
+  }
+  .process-step p{
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    max-width: 560px;
+  }
+  .process-step .days{
+    font-size: 0.74rem;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    display:block;
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background: var(--primary-dark);
+    color: #F6F9F7;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:"";
+    position:absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(227,168,87,0.18), transparent 70%);
+    top: -220px; left: 50%;
+    transform: translateX(-50%);
+  }
+  .closing .wrap{ position:relative; z-index:1; }
+  .closing .section-label{ justify-content:center; color: var(--accent); }
+  .closing .section-label::before{ display:none; }
+  .closing h2{
+    color: #FDFBF6;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    margin-bottom: 22px;
+  }
+  .closing p{
+    color: rgba(246,249,247,0.78);
+    max-width: 520px;
+    margin: 0 auto 36px;
+    font-size: 0.95rem;
+  }
+  .cta-btn{
+    display:inline-block;
+    padding: 18px 48px;
+    border: 1px solid var(--accent);
+    color: #FDFBF6;
+    text-decoration:none;
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+    border-radius: 3px;
+    transition: background .25s ease, color .25s ease;
+  }
+  .cta-btn:hover{
+    background: var(--accent);
+    color: var(--primary-dark);
+  }
+
+  footer{
+    background: #10302D;
+    color: rgba(246,249,247,0.55);
+    text-align:center;
+    padding: 30px 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .understanding-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .values-grid{ grid-template-columns: repeat(2, 1fr); }
+    .hero-tiles{ display:none; }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding: 0 20px; }
+    .section{ padding: 70px 0; }
+    .hero-content{ padding: 120px 0 70px; }
+    .values-grid{ grid-template-columns: 1fr; }
+    .hero-meta{ gap: 22px; }
+    .cost-table th, .cost-table td{ padding: 12px 10px; font-size: 0.8rem; }
+    .process-step{ grid-template-columns: 38px 1fr; gap: 16px; }
+    .process-step .dot{ width:38px; height:38px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <div class="logo">Kairos<span>.</span></div>
+      <div class="tag">PROPOSAL FOR BM高橋 様</div>
+    </div>
+  </nav>
+
+  <!-- ---------- HERO ---------- -->
+  <section class="hero">
+    <div class="hero-tiles">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="wrap hero-content">
+      <div class="hero-eyebrow">KAIROS DESIGN &amp; DEVELOPMENT PROPOSAL</div>
+      <h1>家事を、誰かに。<br><em>ゆとり</em>を、暮らしに届けるサイトを。</h1>
+      <p class="lead">
+        スタッフを選び、空き状況を見て、その場で予約と決済まで完結する——。
+        家事代行サービスの立ち上げにふさわしい、清潔感と信頼感を兼ね備えた一枚のサイトを、
+        低ランニングコストで設計・制作いたします。
+      </p>
+      <div class="hero-meta">
+        <div>ご予算<strong>30,000円以内</strong></div>
+        <div>想定納期<strong>契約後 約18〜20日</strong></div>
+        <div>月額運用目安<strong>0〜1,500円前後〜</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- UNDERSTANDING ---------- -->
+  <section class="section understanding">
+    <div class="wrap">
+      <div class="section-label">UNDERSTANDING THE PROJECT</div>
+      <h2 class="section-title">拝見しました。御社が本当に求めているもの。</h2>
+      <div class="understanding-grid">
+        <div>
+          <p>
+            今回のご依頼を拝見し、御社が目指しているのは単なる「ホームページ」ではなく、
+            <strong>利用者が迷わず予約まで辿り着ける仕組み</strong>だと理解しました。
+            電話をかけて確認し、折り返しを待つ——そのわずかな手間が、家事代行サービスでは
+            利用の大きな障壁になります。スタッフを指名し、カレンダーで空きを見て、その場で
+            決済まで完了する。この一連の流れをストレスなく、<strong>高齢の利用者の方にも
+            分かりやすく</strong>設計することが、今回の制作の核心だと考えています。
+          </p>
+          <p>
+            同時に重視されているのが、<strong>公開後のランニングコスト</strong>です。
+            高機能なシステムほど月額費用はかさみますが、立ち上げ初期の事業にとって
+            固定費は大きな負担になります。Kairosでは、月額契約が不要なCMSと、
+            低コストで運用できる予約・決済の組み合わせをご提案し、
+            「制作費だけでなく、運用し続けられる構成」をお届けします。
+          </p>
+        </div>
+        <div class="quote-card">
+          <p>「制作費だけでなく、公開後のランニングコストを最小限にしたい」</p>
+          <span>— ご依頼内容より</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- VALUES ---------- -->
+  <section class="section values">
+    <div class="wrap">
+      <div class="section-label">WHAT KAIROS CAN OFFER</div>
+      <h2 class="section-title">Kairosがご提供できる5つの価値</h2>
+      <p class="section-sub">
+        デザイン・予約・決済・更新・SEOまで、必要な機能を過不足なく、低コストで実現します。
+      </p>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="num">01</span>
+          <h3>清潔感と信頼感のデザイン</h3>
+          <p>白・ティール・ハニーを基調とした、年齢を問わず見やすい配色とレイアウト。スマホ・PC両対応はもちろん、高齢の利用者でも迷わない導線を設計します。</p>
+        </div>
+        <div class="value-card">
+          <span class="num">02</span>
+          <h3>スタッフ指名×カレンダー予約</h3>
+          <p>5名程度のスタッフ紹介ページと連動し、空き状況をカレンダーで確認・指名予約が可能。自動反映でダブルブッキングを防止します。</p>
+        </div>
+        <div class="value-card">
+          <span class="num">03</span>
+          <h3>手数料を抑えたオンライン決済</h3>
+          <p>予約と同時にクレジットカード決済まで完了できる仕組みを導入。月額固定費がかからず、利用時にのみ手数料が発生する構成を採用します。</p>
+        </div>
+        <div class="value-card">
+          <span class="num">04</span>
+          <h3>誰でも更新できる管理画面</h3>
+          <p>WordPressベースの管理画面で、専門知識がなくても文章・写真・スタッフ情報を更新可能。簡単な操作マニュアルも納品いたします。</p>
+        </div>
+        <div class="value-card">
+          <span class="num">05</span>
+          <h3>検索を見据えた内部SEO設計</h3>
+          <p>タイトル・メタ情報・見出し構成を最初から検索エンジンを意識して設計。「地域名×家事代行」での将来的な検索流入を見据えます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- COST ---------- -->
+  <section class="section cost">
+    <div class="wrap">
+      <div class="section-label">RUNNING COST PLAN</div>
+      <h2 class="section-title">公開後も負担にならない、運用コストの内訳</h2>
+      <p class="section-sub">
+        制作費だけでなく「続けられること」を前提に、固定費を最小限に抑えた構成をご提案します。
+      </p>
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>構成イメージ</th>
+            <th>費用目安</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>サーバー・ドメイン</td>
+            <td>国内レンタルサーバー＋独自ドメイン</td>
+            <td>年間 約12,000〜15,000円</td>
+          </tr>
+          <tr>
+            <td>予約システム</td>
+            <td>軽量WordPressプラグイン／LINE連携も検討可</td>
+            <td>月額 0〜1,500円程度</td>
+          </tr>
+          <tr>
+            <td>オンライン決済</td>
+            <td>Stripe等の従量課金型決済サービス</td>
+            <td>月額固定費なし／決済ごと数%</td>
+          </tr>
+          <tr>
+            <td>サイト管理・更新</td>
+            <td>WordPress管理画面＋操作マニュアル</td>
+            <td>追加費用なし</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="cost-note">
+        ※金額は構成確定時にご相談のうえ、より具体的な数値でご提示いたします。高額な月額契約が発生するSaaS型予約システムは採用しません。
+      </p>
+    </div>
+  </section>
+
+  <!-- ---------- PROCESS ---------- -->
+  <section class="section process">
+    <div class="wrap">
+      <div class="section-label">HOW WE WORK</div>
+      <h2 class="section-title">ご契約から公開までの流れ</h2>
+      <p class="section-sub">ご予算とスケジュール感を踏まえ、約18〜20日を目安にお届けします。</p>
+
+      <div class="process-list">
+        <div class="process-step">
+          <div class="dot">1</div>
+          <div>
+            <span class="days">DAY 1-2</span>
+            <h3>ヒアリング・要件整理</h3>
+            <p>スタッフ数、提供サービス、希望する決済方法などを確認し、必要機能を整理します。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="dot">2</div>
+          <div>
+            <span class="days">DAY 3-7</span>
+            <h3>デザイン・構成設計</h3>
+            <p>清潔感・信頼感を軸にしたトップページ・スタッフ紹介・予約導線のデザインをご確認いただきます。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="dot">3</div>
+          <div>
+            <span class="days">DAY 8-14</span>
+            <h3>実装（予約・決済・CMS）</h3>
+            <p>カレンダー予約、オンライン決済、スタッフ情報の更新機能を実装。SEOの内部設定も並行して行います。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="dot">4</div>
+          <div>
+            <span class="days">DAY 15-18</span>
+            <h3>テスト・操作マニュアル作成</h3>
+            <p>予約〜決済の一連の流れを実機で確認。更新用の簡単なマニュアルをお渡しします。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="dot">5</div>
+          <div>
+            <span class="days">DAY 19-20</span>
+            <h3>公開・初期SEO確認</h3>
+            <p>公開後の表示確認、検索エンジンへの登録を行い、以降もご相談いただける体制を整えます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- CLOSING ---------- -->
+  <section class="section closing">
+    <div class="wrap">
+      <div class="section-label">NEXT STEP</div>
+      <h2>まずは、構成とお見積りの詳細からご相談させてください。</h2>
+      <p>
+        予算・納期・運用コストのすべてに向き合った具体的なご提案をお届けします。
+        過去の予約機能付き制作実績もあわせてご案内いたしますので、お気軽にメッセージください。
+      </p>
+      <a href="#" class="cta-btn">Kairosに相談してみる</a>
+    </div>
+  </section>
+
+  <footer>
+    © Kairos — Web制作・システム開発チーム ／ 本ページはご依頼内容に基づく提案資料です。
+  </footer>
+
+</body>
+</html>
